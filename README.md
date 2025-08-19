@@ -1,144 +1,187 @@
-Receiptify Documentation
-Overview
-Receiptify is a Flutter-based mobile application designed to help users discover and explore a variety of food recipes through a user-friendly interface. The application leverages an external recipe API to fetch and display recipes, allowing users to search for dishes based on ingredients, cuisine, dietary preferences, or other criteria. Receiptify aims to simplify the process of finding and preparing meals by providing detailed recipe information in an accessible and engaging format.
-This documentation provides an overview of the Receiptify application, including its features, setup instructions, and usage guidelines. It is intended for developers, contributors, and users who wish to understand or extend the functionality of the application.
-Table of Contents
+# 🍳 Receiptify - Recipe Finder App
 
-Features
-Tech Stack
-Getting Started
-Prerequisites
-Installation
-Configuration
+![Receiptify App](https://via.placeholder.com/800x400/5e5e5e/ffffff?text=Receiptify+Recipe+App)
 
+## 📖 Overview
 
-Usage
-Project Structure
-API Integration
-Contributing
-License
+**Receiptify** is a modern web application that helps users discover and explore thousands of recipes from around the world. Built with a clean, responsive interface, Receiptify allows food enthusiasts to search for recipes based on ingredients, dietary preferences, or specific cuisines.
 
-Features
-Receiptify offers the following core features:
+🔗 **Live Demo:** [Available Soon]  
+📦 **GitHub Repository:** [https://github.com/chstridho/receiptify-recipeapp](https://github.com/chstridho/receiptify-recipeapp)
 
-Recipe Search: Users can search for recipes by keywords, ingredients, or cuisine type.
-Detailed Recipe Information: Displays comprehensive recipe details, including ingredients, preparation steps, cooking time, and nutritional information (if provided by the API).
-User-Friendly Interface: A clean and intuitive UI built with Flutter for a seamless cross-platform experience on iOS and Android.
-API-Driven Content: Integrates with a third-party recipe API to fetch real-time recipe data.
-Favorites (Optional): Allows users to save their favorite recipes for quick access (if implemented).
-Responsive Design: Optimized for various screen sizes and orientations.
+---
 
-Tech Stack
+## ✨ Features
 
-Frontend: Flutter (Dart)
-Backend: Third-party recipe API (e.g., Spoonacular, Edamam, or similar)
-State Management: Provider or Riverpod (assumed based on typical Flutter project structure)
-HTTP Client: Dio or http package for API requests
-Platform: Cross-platform (iOS and Android)
+- **🔍 Advanced Recipe Search** - Find recipes by ingredients, dietary restrictions, or cuisine type
+- **📱 Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- **❤️ Favorite System** - Save your favorite recipes for quick access
+- **📋 Detailed Instructions** - Step-by-step cooking guidance with ingredient measurements
+- **🍽️ Dietary Filtering** - Filter by vegan, vegetarian, gluten-free, and other dietary needs
+- **⏱️ Cooking Time Indicators** - Quickly identify recipes that fit your schedule
 
-Getting Started
-Prerequisites
-To set up and run the Receiptify application, ensure you have the following installed:
+---
 
-Flutter SDK: Version 3.0.0 or higher
-Dart: Included with Flutter
-IDE: Android Studio, IntelliJ IDEA, or Visual Studio Code with Flutter and Dart plugins
-Emulator/Simulator: Android Emulator or iOS Simulator for testing
-API Key: An API key from a recipe API provider (e.g., Spoonacular, Edamam)
-Git: For cloning the repository
-Terminal/Shell: For running Flutter commands
+## 🛠️ Technology Stack
 
-Installation
+### Frontend
+- **React.js** - Modern UI framework
+- **CSS3** - Styling and animations
+- **JavaScript ES6+** - Application logic
 
-Clone the Repository:
-git clone https://github.com/chstridho/receiptify-recipeapp.git
-cd receiptify-recipeapp
+### Backend & APIs
+- **External Recipe API** - Primary data source for recipes
+- **RESTful Architecture** - Clean API integration
+- **Local Storage** - For saving user preferences and favorites
 
+### Development Tools
+- **Vite** - Fast build tool and development server
+- **Git** - Version control
+- **Responsive Design Principles** - Mobile-first approach
 
-Install Dependencies:Run the following command to fetch the required Flutter packages:
-flutter pub get
+---
 
+## 🚀 Getting Started
 
-Set Up API Key:
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+- Modern web browser with JavaScript enabled
 
-Obtain an API key from your chosen recipe API provider.
-Create a configuration file (e.g., lib/config/api_config.dart) or update the existing configuration to include your API key. Ensure this file is excluded from version control (e.g., added to .gitignore) to protect sensitive information.
+### Installation
 
-Example api_config.dart:
-const String apiKey = 'YOUR_API_KEY_HERE';
-const String apiBaseUrl = 'https://api.example.com/v1';
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/chstridho/receiptify-recipeapp.git
+   cd receiptify-recipeapp
+   ```
 
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Run the Application:Connect a device or start an emulator/simulator, then run:
-flutter run
+3. **Set up environment variables**
+   ```bash
+   # Create a .env file in the root directory
+   # Add your API key (get one from a recipe API provider)
+   VITE_API_KEY=your_api_key_here
+   VITE_API_BASE_URL=api_base_url_here
+   ```
 
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
+5. **Open your browser**
+   Navigate to `http://localhost:5173` (or the port shown in your terminal)
 
-Configuration
+---
 
-API Configuration: Ensure the API base URL and key are correctly set in the configuration file. The application uses these to make HTTP requests to the recipe API.
-Environment Variables: For security, avoid hardcoding sensitive data. Use environment variables or a secure configuration management approach.
-Customization: Modify the UI theme, colors, or layout in the lib directory (e.g., theme.dart or similar) to match your branding or preferences.
+## 📁 Project Structure
 
-Usage
-
-Launch the App: Open the app on your device or emulator.
-Search for Recipes: Use the search bar to enter keywords (e.g., "chicken", "vegan", "Italian") to find relevant recipes.
-View Recipe Details: Tap on a recipe to view its ingredients, instructions, and other details.
-Save Favorites (Optional): If implemented, use the "Favorite" button to save recipes for later.
-Explore Categories: Browse recipes by categories like cuisine type or dietary needs (if supported by the API and UI).
-
-Project Structure
-The repository follows a standard Flutter project structure. Below is an overview of the key directories and files (excluding any sensitive files like credentials):
+```
 receiptify-recipeapp/
-├── lib/
-│   ├── main.dart              # Entry point of the application
-│   ├── screens/              # UI screens (e.g., HomeScreen, RecipeDetailScreen)
-│   ├── widgets/              # Reusable UI components
-│   ├── models/               # Data models for recipes, ingredients, etc.
-│   ├── services/             # API service classes for making HTTP requests
-│   ├── config/               # Configuration files (e.g., API base URL, theme)
-│   └── utils/                # Utility functions and helpers
-├── pubspec.yaml              # Project dependencies and metadata
-├── README.md                 # Basic project information
-└── .gitignore                # Files and folders to exclude from version control
+├── public/                 # Static assets
+├── src/
+│   ├── components/        # Reusable UI components
+│   │   ├── RecipeCard/
+│   │   ├── SearchBar/
+│   │   └── Navigation/
+│   ├── pages/             # Main application pages
+│   │   ├── Home/
+│   │   ├── Search/
+│   │   └── Favorites/
+│   ├── hooks/             # Custom React hooks
+│   ├── utils/             # Helper functions and API calls
+│   ├── styles/            # Global styles and CSS modules
+│   └── App.jsx            # Main application component
+├── package.json
+├── vite.config.js         # Vite configuration
+└── README.md
+```
 
-Note: Sensitive files (e.g., API keys, credentials) are assumed to be excluded from the repository via .gitignore. Do not include or share such files in public repositories.
-API Integration
-Receiptify integrates with a third-party recipe API to fetch recipe data. The API service is typically implemented in the lib/services/ directory, using a package like http or dio for HTTP requests. The general flow is as follows:
+---
 
-API Request: The app sends a request to the API with parameters like search query, cuisine, or dietary restrictions.
-Response Handling: The API returns JSON data, which is parsed into Dart models (e.g., Recipe, Ingredient) defined in lib/models/.
-UI Update: The parsed data is displayed in the app’s UI using Flutter widgets.
+## 🎯 How to Use
 
-Example API service (lib/services/api_service.dart):
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import '../config/api_config.dart';
+### Searching for Recipes
+1. Use the search bar on the homepage to enter ingredients or dish names
+2. Apply filters for dietary preferences, cuisine type, or cooking time
+3. Browse through the results and click on any recipe to view details
 
-class ApiService {
-  Future<List<dynamic>> searchRecipes(String query) async {
-    final response = await http.get(
-      Uri.parse('$apiBaseUrl/recipes/search?query=$query&apiKey=$apiKey'),
-    );
-    if (response.statusCode == 200) {
-      return jsonDecode(response.body)['results'];
-    } else {
-      throw Exception('Failed to load recipes');
-    }
-  }
-}
+### Saving Favorites
+1. Click the heart icon on any recipe card to save it to your favorites
+2. Access your saved recipes through the Favorites page
+3. Your favorites are stored locally in your browser
 
-Note: Replace the API endpoint and parameters with those specific to your chosen recipe API.
-Contributing
-Contributions to Receiptify are welcome! To contribute:
+### Recipe Details
+Each recipe page includes:
+- Complete ingredient list with measurements
+- Step-by-step cooking instructions
+- Preparation and cooking time
+- Serving size information
+- Nutritional information (when available)
 
-Fork the repository.
-Create a new branch (git checkout -b feature/your-feature).
-Make your changes and commit (git commit -m "Add your feature").
-Push to your branch (git push origin feature/your-feature).
-Open a pull request on GitHub.
+---
 
-Please ensure your code follows the project’s coding standards and includes appropriate tests.
-License
-This project is licensed under the MIT License. See the LICENSE file in the repository for details.
+## 🔧 API Integration
+
+Receiptify integrates with a third-party recipe API to fetch comprehensive recipe data. The application handles:
+
+- **Search queries** with multiple parameters
+- **Pagination** for large result sets
+- **Error handling** for failed requests
+- **Caching** to optimize API usage
+
+**Note:** You will need to obtain your own API key from a recipe API provider to run this application.
+
+---
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. 
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- Recipe data provided by [External API Provider]
+- Icons from [Icon Library Name]
+- UI inspiration from various design resources
+
+---
+
+## 📞 Contact
+
+**Chesta Ridho** - [@chstridho](https://github.com/chstridho)
+
+Project Link: [https://github.com/chstridho/receiptify-recipeapp](https://github.com/chstridho/receiptify-recipeapp)
+
+---
+
+**Happy Cooking!** 👨‍🍳👩‍🍳
+
+*Note: This application is for educational and demonstration purposes. Always follow proper food safety guidelines when preparing recipes.*
