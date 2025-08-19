@@ -1,6 +1,5 @@
 # 🍳 Receiptify - Recipe Finder App
 
-![Receiptify App](https://via.placeholder.com/800x400/5e5e5e/ffffff?text=Receiptify+Recipe+App)
 
 ## 📖 Overview
 
