@@ -5,7 +5,6 @@
 
 **Receiptify** is a modern web application that helps users discover and explore thousands of recipes from around the world. Built with a clean, responsive interface, Receiptify allows food enthusiasts to search for recipes based on ingredients, dietary preferences, or specific cuisines.
 
-🔗 **Live Demo:** [Available Soon]  
 📦 **GitHub Repository:** [https://github.com/chstridho/receiptify-recipeapp](https://github.com/chstridho/receiptify-recipeapp)
 
 ---
@@ -75,31 +74,6 @@
 
 5. **Open your browser**
    Navigate to `http://localhost:5173` (or the port shown in your terminal)
-
----
-
-## 📁 Project Structure
-
-```
-receiptify-recipeapp/
-├── public/                 # Static assets
-├── src/
-│   ├── components/        # Reusable UI components
-│   │   ├── RecipeCard/
-│   │   ├── SearchBar/
-│   │   └── Navigation/
-│   ├── pages/             # Main application pages
-│   │   ├── Home/
-│   │   ├── Search/
-│   │   └── Favorites/
-│   ├── hooks/             # Custom React hooks
-│   ├── utils/             # Helper functions and API calls
-│   ├── styles/            # Global styles and CSS modules
-│   └── App.jsx            # Main application component
-├── package.json
-├── vite.config.js         # Vite configuration
-└── README.md
-```
 
 ---
 
